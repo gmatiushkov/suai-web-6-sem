@@ -1,0 +1,77 @@
+/* Связные таблицы стилей для общих элементов всех страниц */
+
+/* Селектор тега */
+body {
+    background-color: #f0f0f0;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Селектор класса */
+.header {
+    background-color: #6B2D5C; /* HEX */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Селектор идентификатора */
+#nav-menu {
+    background-color: rgb(217, 140, 175); /* RGB */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Составной селектор */
+main.content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Селектор для меню */
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: #333333;
+}
+
+    /* Псевдоклассы для ссылок */
+    nav a:link {
+        color: #333333;
+    }
+
+    nav a:visited {
+        color: #800080; 
+    }
+
+    nav a:hover {
+        color: #B56576;
+        text-decoration: underline;
+    }
+
+/* Футер */
+footer {
+    background-image: linear-gradient(to bottom, #6B2D5C, #4A1F3F);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Псевдоэлемент :first-letter для параграфов */
+p:first-letter {
+    font-size: 1.2em;
+    color: #B56576;
+}
+
+/* Разница между margin, border, padding */
+.section {
+    margin: 5mm; /* Внешний отступ */
+    border: 2px solid #6B2D5C; /* Граница */
+    padding: 10px; /* Внутренний отступ */
+}
+
+main img {
+    border-radius: 10px;
+}

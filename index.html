@@ -33,16 +33,86 @@
         nav + div {
             border: 3px dashed blue;
         }
+
         main.content {
             max-width: 1000px;
         }
     </style>
+    <script type="text/javascript">
+    // Всплывающее окно с ФИО (анонимная функция)
+    const showAuthor = function() {
+        alert("Автор сайта:\nФИО: Матюшков Григорий Петрович\nГруппа: 4232");
+    };
+
+    // Часы (анонимная функция)
+    const updateClock = function(showSeconds = false) {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const timeString = showSeconds ? `${hours}:${minutes}:${seconds}` : `${hours}:${minutes}`;
+        const clock = document.getElementsByClassName('clock')[0];
+        if (clock) clock.innerText = timeString;
+    };
+
+    // Изменение цвета заголовка
+    const toggleColor = function () {
+        const title = document.getElementsByClassName('header__title')[0];
+        if (title) {
+            title.style.color = title.style.color === 'red' ? 'white' : 'red';
+        }
+    };
+
+    // Изменение размера изображения
+    let scale = 1;
+    const resizeImage = function() {
+        const img = document.getElementsByClassName('section__image')[0];
+        if (img) {
+            scale = scale === 1 ? 1.5 : 1;
+            img.style.transform = `scale(${scale})`;
+        }
+    };
+
+    // Обновление часов каждую минуту
+    window.addEventListener('load', () => {
+        updateClock();
+        setInterval(() => updateClock(), 60000);
+    });
+
+    // События окна (скроллинг и изменение размера)
+    window.addEventListener('scroll', () => {
+        console.log('Текущий скролл:', window.scrollY);
+    });
+    window.addEventListener('resize', () => {
+        console.log('Размер окна:', window.innerWidth, 'x', window.innerHeight);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        console.log('Позиция мыши:', e.clientX, 'x', e.clientY);
+    });
+
+    // Добавление элемента списка (анонимная функция)
+    const addListItem = function () {
+        const list = document.getElementsByClassName('synth-list')[0];
+        const newItem = document.createElement('li');
+        newItem.textContent = `Новый синтезатор ${list.children.length + 1}`;
+        list.appendChild(newItem);
+    };
+
+    // Удаление элемента списка
+    const removeListItem = function () {
+        const list = document.getElementsByClassName('synth-list')[0];
+        if (list.children.length > 0) {
+            list.removeChild(list.lastChild);
+        }
+    };
+    </script>
 </head>
 <body>
     <!-- Шапка -->
     <header class="header">
         <img src="assets\logo.png" alt="Логотип" width="268" style="display: block; margin: 0 auto;">
-        <h1>Синтез звука и электронная музыка</h1>
+        <h1 class="header__title" ondblclick="toggleColor()">Синтез звука и электронная музыка</h1>
         <h2>Что такое синтез звука и его история с 1990-х годов</h2>
     </header>
 
@@ -56,7 +126,13 @@
     <!-- Основной контент -->
     <main class="content" style="max-width: 800px;">
         <section class="section">
-            <h3>Что такое синтез звука?</h3>
+            <h2 class="section__title">Текущее время</h2>
+            <div class="clock" style="font-size: 24px; margin: 10px 0;"></div>
+            <button ondblclick="updateClock(true)">Показать секунды</button>
+            <p>Двойной клик по кнопке показывает секунды. Двойной клик по заголовку в шапке меняет его цвет. Двойной клик по по первой картинке изменяет её размер. Двойной кллик по футеру выводит окно с ФИО.</p>
+        </section>
+        <section class="section">
+            <h2>Что такое синтез звука?</h2>
             <p>
                 Синтез звука — это процесс создания звуковых волн с помощью электронных или программных инструментов. В отличие от записи живых инструментов, синтез позволяет генерировать звуки с нуля, изменяя их параметры, такие как частота, амплитуда и тембр. Основой синтеза являются <em>осцилляторы</em>, которые производят базовые волны (синусоидальные, квадратные, пилообразные), а фильтры и огибающие формируют окончательный звук.
             </p>
@@ -68,7 +144,7 @@
                 Процесс начинается с генерации звуковой волны. Например, осциллятор создает сигнал, который затем проходит через фильтр, убирающий или подчеркивающий определенные частоты. После этого огибающая (ADSR — attack, decay, sustain, release) определяет, как звук развивается во времени. Этот принцип лежит в основе всех технологий синтеза, от аналоговых устройств 1990-х до современных VST-плагинов.
             </p>
             <div style="text-align: center;">
-                <img src="assets\waveform.png" alt="Звуковая волна" width="500" style="transform: rotate(5deg);">
+                <img src="assets\waveform.png" alt="Звуковая волна" width="500" style="transform: rotate(5deg);" class="section__image" ondblclick="resizeImage()">
             </div>
         </section>
         <hr>
@@ -167,17 +243,21 @@
                 </ul>
             </li>
         </ul>
+        <button ondblclick="addListItem()">Добавить синтезатор</button>
+        <button ondblclick="removeListItem()">Удалить последний синтезатор</button>
 
         <!-- Видео -->
-        <div style="text-align: center;">
+        <div style="text-align: center; margin-top: 20px;">
             <b style="display: block; margin-bottom: 10px;">Демонстрация синтезатора Juno-106:</b>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/86PSr512nIc" frameborder="0" allowfullscreen></iframe>
         </div>
     </main>
 
     <!-- Подвал -->
-    <footer>
-        <p>Матюшков Григорий, 2025 | Контакты: <a href="mailto:gmatiushkov@yandex.ru">gmatiushkov@yandex.ru</a></p>
+    <footer class="footer" ondblclick="showAuthor()">
+        <address class="footer__address">
+            <p>Матюшков Григорий, 2025 | Контакты: <a href="mailto:example@example.com">example@example.com</a></p>
+        </address>
     </footer>
 </body>
 </html>
