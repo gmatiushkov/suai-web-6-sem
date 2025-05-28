@@ -5,39 +5,64 @@
     <meta name="description" content="Список источников о синтезе звука и технологиях">
     <meta name="keywords" content="синтез звука, источники, литература">
     <meta charset="UTF-8">
+    <!-- Связные таблицы стилей -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Глобальные таблицы стилей -->
+    <style>
+        /* Селектор для ссылок */
+        .source-link {
+            color: #B56576;
+            text-decoration: none;
+        }
+
+            .source-link:visited {
+                color: #800080; /* Цвет для посещенных ссылок */
+            }
+
+            .source-link:hover {
+                text-decoration: underline;
+            }
+        /* Селектор для списка источников */
+        .source-list p
+        /* Псевдоэлемент :first-line */
+        .source-list p:first-line {
+            color: #6B2D5C;
+        }
+    </style>
 </head>
-<body bgcolor="#f0f0f0" text="#333333">
+<body>
     <!-- Шапка -->
-    <header style="background-color: #6B2D5C; color: white; text-align: center; padding: 20px;">
+    <header class="header">
         <img src="assets\logo.png" alt="Логотип" width="268" style="display: block; margin: 0 auto;">
         <h1>Синтез звука и электронная музыка</h1>
-        <h2 style="text-align: center;">Использованные источники</h2>
+        <h2>Использованные источники</h2>
     </header>
 
     <!-- Меню -->
-    <nav style="background-color: #D98CAF; text-align: center; padding: 10px;">
-        <a href="index.html" style="margin: 10px; text-decoration: none; color: #333333;">Главная</a>
-        <a href="modern.html" style="margin: 10px; text-decoration: none; color: #333333;">Современные технологии</a>
-        <a href="sources.html" style="margin: 10px; text-decoration: none; color: #333333;">Использованные источники</a>
+    <nav id="nav-menu">
+        <a href="index.html">Главная</a>
+        <a href="modern.html">Современные технологии</a>
+        <a href="sources.html">Использованные источники</a>
     </nav>
 
     <!-- Основной контент -->
-    <main style="max-width: 800px; margin: 20px auto; padding: 0 20px;">
-        <p><a href="https://www.synthtopia.com" style="color: #B56576;">https://www.synthtopia.com</a></p>
-        <p><a href="https://www.residentadvisor.net" style="color: #B56576;">https://www.residentadvisor.net</a></p>
-        <p><a href="https://www.soundonsound.com" style="color: #B56576;">https://www.soundonsound.com</a></p>
-        <hr>
-        <p><cite>"The Synthesizer"</cite> by Mark Vail</p>
-        <p>"Electronic Music: Systems, Techniques, and Controls" by Allen Strange</p>
-        <hr>
-        <p>"The Rise of AI in Sound Design" (Sound on Sound, 2023)</p>
-        <p>"Cloud-Based Music Production" (Resident Advisor, 2021)</p>
+    <main class="content">
+        <div class="source-list">
+            <p><a href="https://www.synthtopia.com" class="source-link">https://www.synthtopia.com</a></p>
+            <p><a href="https://www.residentadvisor.net" class="source-link">https://www.residentadvisor.net</a></p>
+            <p><a href="https://www.soundonsound.com" class="source-link">https://www.soundonsound.com</a></p>
+            <hr>
+            <p><cite>"The Synthesizer"</cite> by Mark Vail</p>
+            <p>"Electronic Music: Systems, Techniques, and Controls" by Allen Strange</p>
+            <hr>
+            <p>"The Rise of AI in Sound Design" (Sound on Sound, 2023)</p>
+            <p>"Cloud-Based Music Production" (Resident Advisor, 2021)</p>
+        </div>
     </main>
 
     <!-- Подвал -->
-    <footer style="background-color: #6B2D5C; color: white; text-align: center; padding: 10px;">
-        <p>Матюшков Григорий, 2025 | Контакты: gmatiushkov@yandex.ru</p>
+    <footer>
+        <p>Матюшков Григорий, 2025 | Контакты: <a href="mailto:gmatiushkov@yandex.ru">gmatiushkov@yandex.ru</a></p>
     </footer>
-
 </body>
 </html>

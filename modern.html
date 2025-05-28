@@ -5,27 +5,57 @@
     <meta name="description" content="Современные технологии синтеза звука: ИИ, нейросети, VST">
     <meta name="keywords" content="ИИ синтез, нейросети, VST, облачные технологии">
     <meta charset="UTF-8">
+    <!-- Связные таблицы стилей -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Глобальные таблицы стилей -->
+    <style>
+        /* Таблица с прокруткой (индивидуальный вариант) */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow-x: auto;
+            display: block;
+        }
+
+            .tech-table th, .tech-table td {
+                border: 5px solid #6B2D5C;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .tech-table th {
+                background-color: #D98CAF;
+            }
+        .table-img {
+            width: 100px;
+            vertical-align: middle;
+        }
+        /* Псевдоэлемент :first-line */
+        p:first-line {
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body bgcolor="#f0f0f0" text="#333333">
+<body>
     <!-- Шапка -->
-    <header style="background-color: #6B2D5C; color: white; text-align: center; padding: 20px;">
+    <header class="header">
         <img src="assets\logo.png" alt="Логотип" width="268" style="display: block; margin: 0 auto;">
         <h1>Синтез звука и электронная музыка</h1>
-        <h2 style="text-align: center;">Современные технологии синтеза звука</h2>
+        <h2>Современные технологии синтеза звука</h2>
     </header>
 
     <!-- Меню -->
-    <nav style="background-color: #D98CAF; text-align: center; padding: 10px;">
-        <a href="index.html" style="margin: 10px; text-decoration: none; color: #333333;">Главная</a>
-        <a href="modern.html" style="margin: 10px; text-decoration: none; color: #333333;">Современные технологии</a>
-        <a href="sources.html" style="margin: 10px; text-decoration: none; color: #333333;">Использованные источники</a>
+    <nav id="nav-menu">
+        <a href="index.html">Главная</a>
+        <a href="modern.html">Современные технологии</a>
+        <a href="sources.html">Использованные источники</a>
     </nav>
 
     <!-- Основной контент -->
-    <main style="max-width: 1200px; margin: 20px auto; padding: 0 20px;">
-        <!-- Левая колонка (текст и картинки) -->
+    <main class="content" style="max-width: 1200px;">
+        <!-- Левая колонка -->
         <article style="width: 60%; float: left;">
-            <section>
+            <section class="section">
                 <h3>ИИ в синтезе звука</h3>
                 <p>
                     Искусственный интеллект (ИИ) кардинально изменил синтез звука, позволив создавать уникальные тембры и текстуры без традиционных инструментов. Одним из пионеров стал NSynth от Google Magenta, представленный в 2017 году. Этот инструмент использует нейросети для комбинирования характеристик разных звуков — например, он может создать гибрид флейты и гитары или даже нечто совершенно новое. NSynth Super, физический прототип, дал музыкантам тактильный интерфейс для управления этими звуками, что вдохновило эксперименты в электронной музыке.
@@ -43,10 +73,9 @@
                     <img src="assets\synthgpt.jpg" alt="Synth GPT" width="500">
                 </div>
             </section>
-
             <hr>
 
-            <section>
+            <section class="section">
                 <h3>Генеративные модели и нейросети</h3>
                 <p>
                     Нейросети активно применяются не только для генерации звука, но и для его обработки. Программы вроде iZotope RX используют ИИ для удаления шума, восстановления аудио и улучшения качества записей. Генеративные модели, такие как AudioCraft от Meta, способны создавать целые музыкальные фрагменты на основе обученных данных. Это особенно полезно для саунд-дизайнеров, работающих в кино и играх.
@@ -55,10 +84,9 @@
                     <img src="assets\izotope.jpg" alt="iZotope RX" width="500">
                 </div>
             </section>
-
             <hr>
 
-            <section>
+            <section class="section">
                 <h3>Облачные технологии</h3>
                 <p>
                     Облачные платформы, такие как Soundtrap и BandLab, сделали синтез звука доступным для всех. Эти сервисы позволяют работать над проектами онлайн, не требуя мощного оборудования. Вы можете использовать встроенные синтезаторы и эффекты, а также сотрудничать с другими музыкантами в реальном времени. Это идеальный вариант для начинающих продюсеров, у которых нет студии.
@@ -67,22 +95,20 @@
                     <img src="assets\soundtrap.png" alt="Soundtrap интерфейс" width="500">
                 </div>
             </section>
-
             <hr>
 
-            <section>
+            <section class="section">
                 <h3>Современные VST-плагины</h3>
                 <p>
                     VST-плагины остаются основой цифрового синтеза звука. Инструменты вроде Serum и Vital предлагают продвинутые возможности модуляции, визуализацию звуковых волн и интуитивный интерфейс. Serum, например, позволяет создавать сложные тембры с помощью wavetable-синтеза, а Vital добавляет бесплатную альтернативу с открытым исходным кодом. Эти плагины интегрируются с DAW, такими как Ableton Live, и остаются стандартом в индустрии.
                 </p>
                 <div style="text-align: center;">
-                    <img src="assets\vital.jpg" alt="Serum VST" width="500">
+                    <img src="assets\vital.jpg" alt="Vital VST" width="500">
                 </div>
             </section>
-
             <hr>
 
-            <section>
+            <section class="section">
                 <h3>Будущее синтеза звука</h3>
                 <p>
                     Будущее синтеза звука связано с дальнейшей интеграцией ИИ и облачных технологий. Уже сейчас эксперименты с генеративным ИИ показывают, как машины могут сочинять музыку или адаптировать звук под конкретные задачи. Развитие квантовых вычислений может ускорить обработку аудио, а виртуальная реальность открывает новые способы взаимодействия с синтезаторами. Мы стоим на пороге новой эры музыкального творчества.
@@ -90,13 +116,13 @@
             </section>
         </article>
 
-        <!-- Правая колонка (таблица и аудио) -->
+        <!-- Правая колонка -->
         <aside style="width: 35%; float: right; margin-right: 20px;">
             <!-- Таблица с объединением строк -->
-            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;" border="1">
+            <table class="tech-table">
                 <caption style="font-weight: bold; margin-bottom: 10px;">Современные технологии синтеза звука</caption>
                 <thead>
-                    <tr bgcolor="#d98caf">
+                    <tr>
                         <th style="padding: 10px;">Технология</th>
                         <th style="padding: 10px;">Пример</th>
                         <th style="padding: 10px;">Преимущества</th>
@@ -107,7 +133,7 @@
                 <tbody>
                     <tr>
                         <td rowspan="3" style="padding: 10px;">ИИ и нейросети</td>
-                        <td style="padding: 10px;">NSynth</td>
+                        <td style="padding: 10px;"><img src="assets\nsynth.png" alt="NSynth" class="table-img"></td>
                         <td style="padding: 10px;">Творческая гибкость</td>
                         <td style="padding: 10px;">Требует обучения</td>
                         <td rowspan="3" style="padding: 10px;">2010-е</td>
@@ -179,9 +205,8 @@
     </main>
 
     <!-- Подвал -->
-    <footer style="background-color: #6B2D5C; color: white; text-align: center; padding: 10px;">
-        <p>Матюшков Григорий, 2025 | Контакты: gmatiushkov@yandex.ru</p>
+    <footer>
+        <p>Матюшков Григорий, 2025 | Контакты: <a href="mailto:gmatiushkov@yandex.ru">gmatiushkov@yandex.ru</a></p>
     </footer>
-
 </body>
 </html>
